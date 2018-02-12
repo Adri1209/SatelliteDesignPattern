@@ -3,5 +3,5 @@ package observer;
 public interface ISatelliteListener {
 
     void planetIsCircled();
-    void resetPosition();
+    void resetPosition(int actualPosition, int differenceToOrigin);
 }
