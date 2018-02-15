@@ -24,7 +24,7 @@ public class Satellite {
 
     public void wrongPosition(int differenceToOrigin) {
 
-        listeners.resetPosition(this.distance,differenceToOrigin);
+        listeners.resetPosition(differenceToOrigin, this);
     }
 
     public int speed (){

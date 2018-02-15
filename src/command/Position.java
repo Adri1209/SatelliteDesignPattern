@@ -1,16 +1,20 @@
 package command;
 
-public class Position {
-    private int actualposition;
-    private int differenceToOrigin;
+import observer.Satellite;
 
-    public Position (int actualposition, int differenceToOrigin){
-        this.actualposition = actualposition;
+public class Position {
+    private int differenceToOrigin;
+    private Satellite satellite;
+
+    public Position (int differenceToOrigin, Satellite satellite){
         this.differenceToOrigin = differenceToOrigin;
+        this.satellite = satellite;
     }
 
     public void move(){
 
-        actualposition += (differenceToOrigin);
+        System.out.println("Move Satellite about " + differenceToOrigin);
+        int newposition = satellite.getDistance() + (differenceToOrigin);
+        satellite.setDistance(newposition);
     }
 }

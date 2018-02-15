@@ -19,8 +19,6 @@ public class Application {
         while (circumference != satellite.getPosition()){
             if (satellite.getDistance() != 3){
                 satellite.wrongPosition(3-satellite.getDistance());
-                //TODO Command can set distance of Satellite
-
             }
             satellite.setPosition(satellite.getPosition()+satellite.speed());
             double random = randomizer.nextDouble();

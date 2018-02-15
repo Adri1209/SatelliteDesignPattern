@@ -10,7 +10,6 @@ private Position position;
 
     @Override
     public void execute() {
-        System.out.println("Move Sattelite");
         position.move();
 
     }
