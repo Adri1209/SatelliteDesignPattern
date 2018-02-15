@@ -1,22 +1,35 @@
 package main;
 
 import bridge.EngineOne;
+import bridge.EngineTwo;
 import bridge.IEngine;
 import observer.ControlCenter;
 import observer.Satellite;
 import random.MersenneTwisterFast;
 
+import java.util.Scanner;
+
 public class Application {
 
     public static void main(String[] args){
 
+        Scanner scanner = new Scanner(System.in);
+        IEngine engine;
+        byte enginenumber = scanner.nextByte();
+        if (enginenumber == 1)
+            engine = new EngineOne();
+        else if (enginenumber == 2)
+            engine = new EngineTwo();
+        else {
+            engine = new EngineOne();
+            System.out.println("No Engine chosen! Engine One will be used.");
+        }
         MersenneTwisterFast randomizer = new MersenneTwisterFast();
         ControlCenter controlCenter = new ControlCenter();
-        IEngine engine1 = new EngineOne();
-        Satellite satellite = new Satellite(controlCenter,engine1);
+        Satellite satellite = new Satellite(controlCenter,engine);
         Planet planet = new Planet();
-        long circumference = Math.round(planet.getCircumference());
-        while (circumference != satellite.getPosition()){
+        int circumference = (int) Math.round(planet.getCircumference());
+        while (circumference > satellite.getPosition()){
             if (satellite.getDistance() != 3){
                 satellite.wrongPosition(3-satellite.getDistance());
             }
