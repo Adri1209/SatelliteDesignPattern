@@ -15,6 +15,7 @@ public class Application {
 
         Scanner scanner = new Scanner(System.in);
         IEngine engine;
+        System.out.println("Please choose between Engine one or two by typing the Number: ");
         byte enginenumber = scanner.nextByte();
         if (enginenumber == 1)
             engine = new EngineOne();
