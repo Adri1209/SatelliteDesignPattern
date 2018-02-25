@@ -29,22 +29,22 @@ public class Application {
         ControlCenter controlCenter = new ControlCenter();
         Satellite satellite = new Satellite(controlCenter,engine);
         Planet planet = new Planet();
-        int circumference = (int) Math.round(planet.getCircumference());
-        while (circumference > satellite.getPosition()){
+        int circumference = (int) Math.round(planet.getCircumference());                        // Umfang des Planeten wird gerundet
+        while (circumference > satellite.getPosition()){                                       //Wird solange durchgeführt, bis Planet umkreist ist
             if (satellite.getDistance() != 3){
-                satellite.wrongPosition(3-satellite.getDistance());
+                satellite.wrongPosition(3-satellite.getDistance());             // Wenn Distanz nicht korrekt, wird hier die Korrektur durchgeführt
             }
-            satellite.setPosition(satellite.getPosition()+satellite.speed());
+            satellite.setPosition(satellite.getPosition()+satellite.speed());                   // Satellit wird mit Geschwindigkeit des Motors fortbewegt
             double random = randomizer.nextDouble();
             if (random <= 0.1){
                 int randomInt = randomizer.nextInt(-1,1);
-                if (randomInt == 0) randomInt = 1;
+                if (randomInt == 0) randomInt = 1;                                              // Mit einer Wahrscheinlichkeit von 0,1 wird hier die Distanz zum Planeten verändert
                 satellite.setDistance(satellite.getDistance()+(randomInt));
             }
             System.out.println("Position: "+satellite.getPosition()+ " Distance to planet: "+ satellite.getDistance());
 
         }
-        satellite.circled();
+        satellite.circled();                                                                    // Satellit hat Planet umkreist
 
     }
 
