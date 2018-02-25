@@ -2,8 +2,6 @@ package observer;
 
 import bridge.IEngine;
 
-import java.util.ArrayList;
-
 public class Satellite {
     private ISatelliteListener listeners;
     private IEngine engine;
