@@ -1,9 +1,9 @@
 package command;
 
 public class MoveCommand implements ICommand {
-private Position position;
+private Distance position;
 
-    public MoveCommand(Position position)
+    public MoveCommand(Distance position)
     {
         this.position = position;
     }

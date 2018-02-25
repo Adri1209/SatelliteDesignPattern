@@ -2,11 +2,11 @@ package command;
 
 import observer.Satellite;
 
-public class Position {
+public class Distance {
     private int differenceToOrigin;
     private Satellite satellite;
 
-    public Position (int differenceToOrigin, Satellite satellite){
+    public Distance (int differenceToOrigin, Satellite satellite){
         this.differenceToOrigin = differenceToOrigin;
         this.satellite = satellite;
     }

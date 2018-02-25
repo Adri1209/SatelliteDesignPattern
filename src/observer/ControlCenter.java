@@ -2,7 +2,7 @@ package observer;
 
 import command.ICommand;
 import command.MoveCommand;
-import command.Position;
+import command.Distance;
 import command.Remote;
 
 public class ControlCenter implements ISatelliteListener {
@@ -18,8 +18,8 @@ public class ControlCenter implements ISatelliteListener {
     public void resetPosition(int differenceToOrigin, Satellite satellite) {
 
         Remote remote = new Remote();
-        Position position = new Position(differenceToOrigin, satellite);
-        ICommand move = new MoveCommand(position);
+        Distance distance = new Distance(differenceToOrigin, satellite);
+        ICommand move = new MoveCommand(distance);
 
         remote.setCommand(move);
         remote.pressButton();
